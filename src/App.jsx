@@ -18,6 +18,7 @@ function App() {
   //구조 설계
   //1안: 객체 안에 배열
   //2안: 배열 안에 객체
+  //참고주소: https://velog.io/@rimo09/useState%EC%83%81%ED%83%9C%EB%A1%9C-%EC%97%AC%EB%9F%AC%EB%B3%80%EC%88%98-%EC%82%AC%EC%9A%A9-vs-object-%EC%82%AC%EC%9A%A9-%EC%96%B4%EB%96%A4%EA%B2%8C-%EC%A2%8B%EC%9D%84%EA%B9%8C
   const [data, setData] = useState({
     name: [],
     phone: [],
