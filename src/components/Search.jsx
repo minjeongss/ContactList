@@ -7,6 +7,7 @@ export default function Search({ setSearchKeyword }) {
       setSearchKeyword(currSearchKeyword);
     }
   };
+
   return (
     <div>
       <input
@@ -16,6 +17,14 @@ export default function Search({ setSearchKeyword }) {
         onChange={(e) => setCurrSearchKeyword(e.target.value)}
         onKeyUp={handleEnter}
       />
+      <button
+        onClick={() => {
+          setSearchKeyword("");
+          setCurrSearchKeyword("");
+        }}
+      >
+        전체 리스트 보기
+      </button>
     </div>
   );
 }

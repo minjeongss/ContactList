@@ -10,7 +10,6 @@ export default function ListContainer({ data, setData }) {
         searchKeyword={searchKeyword}
         setSearchKeyword={setSearchKeyword}
       />
-      <button>전체 리스트 보기</button>
       {searchKeyword === ""
         ? data.name.map((elem, idx) => (
             <List
