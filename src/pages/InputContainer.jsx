@@ -48,7 +48,6 @@ export default function InputContainer(props) {
         setData={(value) => setNewData({ ...newData, comment: value })}
       />
       <button onClick={addData}>저장</button>
-      <button onClick={() => console.log(props.data)}>확인</button>
     </div>
   );
 }
