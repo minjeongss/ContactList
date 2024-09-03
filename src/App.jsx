@@ -50,6 +50,7 @@ function App() {
           <GroupModal
             groupOption={groupOption}
             setGroupOption={setGroupOption}
+            setGroupModal={setGroupModal}
           />
         ) : (
           ""
@@ -60,6 +61,7 @@ function App() {
             phone={detailModal.phone}
             group={detailModal.group}
             comment={detailModal.comment}
+            setDetailModal={setDetailModal}
           />
         ) : (
           ""

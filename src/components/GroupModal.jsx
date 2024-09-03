@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-export default function GroupModal({ groupOption, setGroupOption }) {
+export default function GroupModal({
+  groupOption,
+  setGroupOption,
+  setGroupModal,
+}) {
   const [newGroup, setNewGroup] = useState("");
   const addGroup = () => {
     setGroupOption((prev) => [...prev, newGroup]);
@@ -11,7 +15,7 @@ export default function GroupModal({ groupOption, setGroupOption }) {
   };
   return (
     <div>
-      <button>닫기</button>
+      <button onClick={() => setGroupModal(false)}>닫기</button>
       <div>
         <h2>그룹 관리</h2>
         <ul>

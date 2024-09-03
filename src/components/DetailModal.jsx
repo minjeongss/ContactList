@@ -1,7 +1,16 @@
 export default function DetailModal(props) {
   return (
     <div>
-      <button>닫기</button>
+      <button
+        onClick={() =>
+          props.setDetailModal((prev) => ({
+            ...prev,
+            isOpen: false,
+          }))
+        }
+      >
+        닫기
+      </button>
       <div>
         <h2>연락처 상세 정보</h2>
         <ul>
