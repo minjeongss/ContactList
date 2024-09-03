@@ -1,0 +1,21 @@
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid lightgray;
+}
+.list span:nth-of-type(2) {
+  font-weight: 700;
+}
+.listInfoContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+.listBtnContainer {
+  display: flex;
+  gap: 0.5rem;
+}

@@ -101,7 +101,9 @@ export default function InputContainer(props) {
         data={newData.comment}
         setData={(value) => setNewData({ ...newData, comment: value })}
       />
-      <button onClick={handleData}>저장</button>
+      <button className="actionBtn saveBtn" onClick={handleData}>
+        저장
+      </button>
     </div>
   );
 }

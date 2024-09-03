@@ -9,7 +9,22 @@ li {
 .bodyContainer {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  gap: 2rem;
+}
+button {
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.actionBtn {
+  background-color: #295f98;
+  color: white;
+  border: none;
+}
+.closeBtn {
+  background-color: tomato;
+  color: white;
+  border: none;
 }
 @media (max-width: 800px) {
   .bodyContainer {

@@ -2,9 +2,9 @@ import { useState } from "react";
 import Header from "./pages/Header";
 import InputContainer from "./pages/InputContainer";
 import ListContainer from "./pages/ListContainer";
-import "./styles/App.css";
 import GroupModal from "./components/GroupModal";
 import DetailModal from "./components/DetailModal";
+import "./styles/App.css";
 
 function App() {
   const [groupModal, setGroupModal] = useState(false);

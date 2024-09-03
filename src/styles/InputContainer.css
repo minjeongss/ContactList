@@ -1,9 +1,13 @@
 .inputContainer {
   border-radius: 1rem;
-  border: 2px solid tomato;
+  border: 2px solid #295f98;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  width: 30%;
+  gap: 0.5rem;
+}
+.saveBtn {
+  width: 100%;
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/Search.css";
 
 export default function Search({ setSearchKeyword }) {
   const [currSearchKeyword, setCurrSearchKeyword] = useState("");
@@ -9,8 +10,9 @@ export default function Search({ setSearchKeyword }) {
   };
 
   return (
-    <div>
+    <div className="searchContainer">
       <input
+        className="searchInput"
         type="text"
         placeholder="검색어를 입력 후 엔터를 누르세요"
         value={currSearchKeyword}
@@ -18,6 +20,7 @@ export default function Search({ setSearchKeyword }) {
         onKeyUp={handleEnter}
       />
       <button
+        className="actionBtn"
         onClick={() => {
           setSearchKeyword("");
           setCurrSearchKeyword("");

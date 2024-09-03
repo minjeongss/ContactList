@@ -1,11 +1,11 @@
 import { useState } from "react";
 import List from "../components/List";
 import Search from "../components/Search";
-
+import "../styles/ListContainer.css";
 export default function ListContainer({ data, setData, setDetailModal }) {
   const [searchKeyword, setSearchKeyword] = useState("");
   return (
-    <div>
+    <div className="listContainer">
       <Search
         searchKeyword={searchKeyword}
         setSearchKeyword={setSearchKeyword}
