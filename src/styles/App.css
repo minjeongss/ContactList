@@ -11,3 +11,8 @@ li {
   justify-content: center;
   margin: 0 auto;
 }
+@media (max-width: 800px) {
+  .bodyContainer {
+    flex-direction: column;
+  }
+}
