@@ -1,6 +1,5 @@
 export default function List(props) {
   const removeData = () => {
-    console.log("삭제");
     props.setData((prev) => ({
       name: prev.name.filter((_, idx) => idx !== props.index),
       phone: prev.phone.filter((_, idx) => idx !== props.index),
