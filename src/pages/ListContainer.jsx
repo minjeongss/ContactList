@@ -18,6 +18,7 @@ export default function ListContainer({ data, setData }) {
               name={elem}
               phone={data.phone[idx]}
               group={data.group[idx]}
+              comment={data.comment[idx]}
               setData={setData}
             />
           ))
@@ -34,6 +35,7 @@ export default function ListContainer({ data, setData }) {
                   name={elem}
                   phone={data.phone[idx]}
                   group={data.group[idx]}
+                  comment={data.comment[idx]}
                   setData={setData}
                 />
               );
