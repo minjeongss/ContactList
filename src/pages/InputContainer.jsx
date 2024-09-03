@@ -39,8 +39,8 @@ export default function InputContainer(props) {
       />
       <InputGroup
         groupOption={props.groupOption}
-        setGroupOption={props.setGroupOption}
         setData={(value) => setNewData({ ...newData, group: value })}
+        setGroupModal={props.setGroupModal}
       />
       <InputText
         type={type[2]}

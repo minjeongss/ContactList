@@ -1,8 +1,4 @@
-import { useState } from "react";
-import GroupModal from "./GroupModal";
-
-export default function InputGroup({ groupOption, setGroupOption, setData }) {
-  const [groupModal, setGroupModal] = useState(false);
+export default function InputGroup({ groupOption, setData, setGroupModal }) {
   return (
     <div>
       <label htmlFor="group">그룹</label>
@@ -14,11 +10,6 @@ export default function InputGroup({ groupOption, setGroupOption, setData }) {
         ))}
       </select>
       <button onClick={() => setGroupModal(true)}>조직 추가</button>
-      {groupModal ? (
-        <GroupModal groupOption={groupOption} setGroupOption={setGroupOption} />
-      ) : (
-        ""
-      )}
     </div>
   );
 }

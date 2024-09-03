@@ -2,7 +2,7 @@ import { useState } from "react";
 import List from "../components/List";
 import Search from "../components/Search";
 
-export default function ListContainer({ data, setData }) {
+export default function ListContainer({ data, setData, setDetailModal }) {
   const [searchKeyword, setSearchKeyword] = useState("");
   return (
     <div>
@@ -20,6 +20,7 @@ export default function ListContainer({ data, setData }) {
               group={data.group[idx]}
               comment={data.comment[idx]}
               setData={setData}
+              setDetailModal={setDetailModal}
             />
           ))
         : data.name.map((elem, idx) => {
@@ -37,6 +38,7 @@ export default function ListContainer({ data, setData }) {
                   group={data.group[idx]}
                   comment={data.comment[idx]}
                   setData={setData}
+                  setDetailModal={setDetailModal}
                 />
               );
             }
