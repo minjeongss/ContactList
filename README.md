@@ -1,8 +1,27 @@
-# React + Vite
+# Contact List 🛸
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 소개
 
-Currently, two official plugins are available:
+연락처 관리 서비스입니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+연락처 저장 및 삭제, 검색, 상세 조회가 가능합니다.
+
+## 기술
+
+- 개발: React
+- 배포: Github Pages
+
+## 사용법
+
+- [배포된 주소](https://minjeongss.github.io/ContactList/)
+
+- 로컬
+  - 진행
+  ```
+  npm i
+  npm run dev
+  ```
+  - 배포
+  ```
+  npm run deploy
+  ```
