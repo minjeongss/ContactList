@@ -21,6 +21,7 @@ export default function InputContainer(props) {
     phone: false,
   });
   const isMounted = useRef(false);
+  const nameInputRef = useRef(null);
   useEffect(() => {
     if (isMounted.current && (newData.name !== "" || newData.phone !== "")) {
       checkValidation();
@@ -104,15 +105,16 @@ export default function InputContainer(props) {
   };
 
   const handleData = () => {
-    console.log(isValidate);
     if (isValidate.name && isValidate.phone) {
       addData();
       resetData();
+      nameInputRef.current.focus();
     }
   };
   return (
     <div className="inputContainer">
       <InputText
+        ref={nameInputRef}
         type={type[0]}
         data={newData.name}
         setData={(value) => setNewData({ ...newData, name: value })}

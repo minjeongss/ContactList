@@ -1,9 +1,12 @@
+import { forwardRef } from "react";
 import "../styles/Input.css";
-export default function InputText({ type, data, setData }) {
+
+const InputText = forwardRef(({ type, data, setData }, ref) => {
   return (
     <div className="inputText">
       <label htmlFor={type}>{type}</label>
       <input
+        ref={ref} // ref를 input 요소에 전달
         id={type}
         type="text"
         placeholder={type}
@@ -12,4 +15,6 @@ export default function InputText({ type, data, setData }) {
       />
     </div>
   );
-}
+});
+InputText.displayName = "InputText";
+export default InputText;
