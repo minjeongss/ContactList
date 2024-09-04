@@ -5,7 +5,10 @@ import "../styles/InputContainer.css";
 import ErrorText from "../components/ErrorText";
 
 export default function InputContainer(props) {
+  //일반 변수
   const type = ["이름", "전화번호", "간단한 기록"];
+
+  //useState
   const [error, setError] = useState({
     name: false,
     phone: false,
@@ -20,8 +23,12 @@ export default function InputContainer(props) {
     name: false,
     phone: false,
   });
+
+  //useRef
   const isMounted = useRef(false);
   const nameInputRef = useRef(null);
+
+  //useEffect
   useEffect(() => {
     if (isMounted.current && (newData.name !== "" || newData.phone !== "")) {
       checkValidation();
@@ -31,6 +38,8 @@ export default function InputContainer(props) {
       console.log("CHANGE");
     }
   }, [newData]);
+
+  //valdation 함수
   const checkName = () => {
     let isChecked = false;
     const nameRegex = /^[ㄱ-ㅎ가-힣]{2,}$/;
@@ -87,6 +96,8 @@ export default function InputContainer(props) {
       comment: [...prev.comment, newData.comment],
     }));
   };
+
+  //초기화 함수
   const resetData = () => {
     setNewData({
       name: "",
@@ -104,6 +115,7 @@ export default function InputContainer(props) {
     });
   };
 
+  //값 등록 함수
   const handleData = () => {
     if (isValidate.name && isValidate.phone) {
       addData();
@@ -111,6 +123,7 @@ export default function InputContainer(props) {
       nameInputRef.current.focus();
     }
   };
+
   return (
     <div className="inputContainer">
       <InputText
