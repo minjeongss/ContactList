@@ -1,3 +1,8 @@
 .listContainer {
   width: 40%;
 }
+@media (max-width: 800px) {
+  .listContainer {
+    width: 80%;
+  }
+}

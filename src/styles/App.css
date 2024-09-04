@@ -29,5 +29,6 @@ button {
 @media (max-width: 800px) {
   .bodyContainer {
     flex-direction: column;
+    align-items: center;
   }
 }

@@ -2,10 +2,16 @@ import { useState } from "react";
 import List from "../components/List";
 import Search from "../components/Search";
 import "../styles/ListContainer.css";
+import styled from "styled-components";
+const Title = styled.h2`
+  color: tomato;
+`;
+
 export default function ListContainer({ data, setData, setDetailModal }) {
   const [searchKeyword, setSearchKeyword] = useState("");
   return (
     <div className="listContainer">
+      <Title hidden>리스트 영역</Title>
       <Search
         searchKeyword={searchKeyword}
         setSearchKeyword={setSearchKeyword}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import InputGroup from "../components/InputGroup";
 import InputText from "../components/InputText";
 import "../styles/InputContainer.css";
@@ -16,11 +16,23 @@ export default function InputContainer(props) {
     group: props.groupOption[0],
     comment: "",
   });
-  const checkValidation = () => {
+  const [isValidate, setIsValidate] = useState({
+    name: false,
+    phone: false,
+  });
+  const isMounted = useRef(false);
+  useEffect(() => {
+    if (isMounted.current && (newData.name !== "" || newData.phone !== "")) {
+      checkValidation();
+      console.log("OK");
+    } else {
+      isMounted.current = true;
+      console.log("CHANGE");
+    }
+  }, [newData]);
+  const checkName = () => {
     let isChecked = false;
     const nameRegex = /^[ㄱ-ㅎ가-힣]{2,}$/;
-    const phoneRegex = /^(010{1})([0-9]{4})([0-9]{4})$/;
-
     if (nameRegex.test(newData.name)) {
       setError((prev) => ({
         ...prev,
@@ -34,12 +46,21 @@ export default function InputContainer(props) {
       }));
       isChecked = false;
     }
+    setIsValidate((prev) => ({
+      ...prev,
+      name: isChecked,
+    }));
+  };
+  const checkPhone = () => {
+    const phoneRegex = /^(010{1})([0-9]{4})([0-9]{4})$/;
+    let isChecked = false;
+
     if (phoneRegex.test(newData.phone)) {
       setError((prev) => ({
         ...prev,
         phone: false,
       }));
-      isChecked ? true : false;
+      isChecked = true;
     } else {
       setError((prev) => ({
         ...prev,
@@ -48,7 +69,14 @@ export default function InputContainer(props) {
       isChecked = false;
     }
 
-    return isChecked;
+    setIsValidate((prev) => ({
+      ...prev,
+      phone: isChecked,
+    }));
+  };
+  const checkValidation = () => {
+    checkName();
+    checkPhone();
   };
   const addData = () => {
     props.setData((prev) => ({
@@ -69,10 +97,15 @@ export default function InputContainer(props) {
       name: false,
       phone: false,
     });
+    setIsValidate({
+      name: false,
+      phone: false,
+    });
   };
 
   const handleData = () => {
-    if (checkValidation()) {
+    console.log(isValidate);
+    if (isValidate.name && isValidate.phone) {
       addData();
       resetData();
     }
